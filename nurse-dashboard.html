@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nurse Dashboard | CarePoint Hospital</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/layout.js" defer></script>
+</head>
+
+<body data-page="dashboard">
+
+    <div id="site-header"></div>
+
+    <main class="wrap">
+
+        <div class="heading">
+            <div>
+                <h1>Nurse Dashboard</h1>
+                <p id="nurseGreeting"></p>
+            </div>
+
+            <button id="logout" class="secondary">
+                Log Out
+            </button>
+        </div>
+
+        <!-- Clickable patient statistics -->
+        <div class="stats">
+
+            <a href="nurse-dashboard.html?view=all"
+               class="panel stat-card">
+                <strong id="total">0</strong>
+                <span>Total Patients</span>
+            </a>
+
+            <a href="nurse-dashboard.html?view=waiting"
+               class="panel stat-card">
+                <strong id="waiting">0</strong>
+                <span>Waiting</span>            </a>
+
+            <a href="nurse-dashboard.html?view=completed"
+               class="panel stat-card">
+                <strong id="completed">0</strong>
+                <span>Completed</span>
+            </a>
+
+        </div>
+
+        <!-- Patient list -->
+        <section class="panel">
+
+            <h2 id="patientListTitle">All Patients</h2>
+
+            <p>
+                View patient assignments, live estimated wait
+                times, appointment durations, and statuses.
+            </p>
+
+            <label>
+                Search patients
+                <input
+                    id="search"
+                    type="search"
+                    placeholder="Search by name or patient ID"
+                >
+            </label>
+
+            <div class="scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Patient / ID</th>
+                            <th>Check-In</th>
+                            <th>Reason</th>
+                            <th>Urgency</th>
+                            <th>Status</th>
+                            <th>Estimated Wait</th>
+                            <th>Time with Patient</th>
+                            <th>Assigned Nurse</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="patientRows"></tbody>
+                </table>
+            </div>
+
+            <p id="empty" hidden>
+                No matching patients.
+            </p>
+
+            <p class="note">
+                Wait times and urgency are simulated for this
+                school project and are not medical predictions.
+            </p>
+
+        </section>
+
+        <!-- Shift calendar -->
+        <section class="panel">
+
+            <h2>Assignment Calendar Per Shift</h2>
+
+            <p id="shiftInfo"></p>
+
+            <label>
+                Schedule date
+                <input id="scheduleDate" type="date">
+            </label>
+
+            <div class="scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Patient</th>
+                            <th>Check-In Time</th>
+                            <th>Estimated Start</th>
+                            <th>Duration</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="scheduleRows"></tbody>
+                </table>
+            </div>
+
+            <p id="scheduleEmpty" hidden>
+                No assigned patients for this date.
+            </p>
+
+        </section>
+
+        <!-- Workload -->
+        <section class="panel">
+
+            <h2>Workload and Schedules</h2>
+
+            <div class="workload-grid">
+                <div>
+                    <strong id="assignedCount">0</strong>
+                    <span>Assigned Patients</span>
+                </div>
+
+                <div>
+                    <strong id="activeCount">0</strong>
+                    <span>Active Assignments</span>
+                </div>
+
+                <div>
+                    <strong id="shiftCompleted">0</strong>
+                    <span>Completed Assignments</span>
+                </div>
+
+                <div>
+                    <strong id="scheduledMinutes">0 min</strong>
+                    <span>Remaining Scheduled Time</span>
+                </div>
+            </div>
+
+            <p id="workload"></p>
+
+        </section>
+
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>

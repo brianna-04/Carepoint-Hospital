@@ -1,0 +1,371 @@
+* {
+    box-sizing:border-box
+}
+
+body {
+    margin:0;
+    background:#f3f7fb;
+    color:#23354a;
+    font:16px Arial,sans-serif;
+    line-height:1.5
+}
+
+header {
+    background:#14649a;
+    color:white
+}
+
+.wrap {
+    max-width:1040px;
+    margin:auto;
+    padding:0 20px
+}
+
+.nav {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    min-height:70px
+}
+
+.nav a {
+    color:white;
+    text-decoration:none
+}
+
+.brand {
+    font-size:21px;
+    font-weight:bold
+}
+
+main {
+    padding-top:32px!important;
+    padding-bottom:65px!important;
+    min-height:80vh
+}
+
+h1 {
+    font-size:30px;
+    margin:0 0 10px;
+    color:#164f78
+}
+
+h2 {
+    font-size:21px;
+    margin:0 0 15px;
+    color:#164f78
+}
+
+.hero {
+    background:#dcecf8;
+    padding:65px 30px;
+    text-align:center;
+    border-radius:8px;
+    margin-bottom:25px
+}
+
+.hero h1 {
+    font-size:38px
+}
+
+.actions {
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
+    margin-top:26px
+}
+
+.panel {
+    background:white;
+    border:1px solid #d7e1e9;
+    border-radius:7px;
+    padding:25px;
+    margin:20px 0
+}
+
+.narrow {
+    max-width:520px
+}
+
+.emergency {
+    background:#fff1f0;
+    padding:12px;
+    color:#a32c25;
+    border-left:4px solid #d74b40
+}
+
+.button,button {
+    display:inline-block;
+    background:#14649a;
+    border:1px solid #14649a;
+    color:white;
+    padding:12px 20px;
+    border-radius:5px;
+    font:inherit;
+    text-decoration:none;
+    cursor:pointer
+}
+
+.button:hover,button:hover {
+    background:#0d4b75
+}
+
+.button.secondary,button.secondary {
+    background:white;
+    color:#14649a
+}
+
+.fields {
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:15px
+}
+
+label {
+    display:block;
+    font-weight:bold;
+    margin:0 0 15px
+}
+
+input,select,textarea {
+    display:block;
+    width:100%;
+    margin-top:6px;
+    padding:11px;
+    border:1px solid #b7c9d6;
+    border-radius:4px;
+    background:white;
+    color:#23354a;
+    font:inherit
+}
+
+textarea {
+    resize:vertical
+}
+
+form button {
+    margin-top:10px
+}
+
+.note {
+    font-size:14px;
+    color:#627285
+}
+
+.error {
+    color:#ba302b
+}
+
+.heading {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px
+}
+
+.stats {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px
+}
+
+.stats .panel {
+    margin:8px 0;
+    display:flex;
+    flex-direction:column
+}
+
+.stats strong {
+    font-size:30px;
+    color:#14649a
+}
+
+.scroll {
+    overflow-x:auto
+}
+
+table {
+    width:100%;
+    border-collapse:collapse;
+    text-align:left;
+    min-width:750px
+}
+
+th,td {
+    padding:12px;
+    border-bottom:1px solid #dbe4eb;
+    vertical-align:top
+}
+
+th {
+    background:#e8f2f9
+}
+
+td select,td input {
+    min-width:125px
+}
+
+footer {
+    padding:20px;
+    text-align:center;
+    background:#e4edf3;
+    color:#536577;
+    font-size:13px
+}
+
+.details p {
+    padding:9px 0;
+    border-bottom:1px solid #e5edf2
+}
+
+@media(max-width:650px) {
+    .fields,.stats {
+        grid-template-columns:1fr
+    }
+
+    .hero {
+        padding:40px 16px
+    }
+
+    .hero h1 {
+        font-size:30px
+    }
+
+    .heading {
+        align-items:flex-start
+    }
+
+    .panel {
+        padding:18px
+    }
+
+}
+
+/* Home waiting list and nurse sign-in choices */
+.waitlist {
+    padding-left: 30px;
+}
+
+.waitlist li {
+    padding: 10px 4px;
+    border-bottom: 1px solid #dbe4eb;
+}
+
+.login-choices {
+    margin-top: 24px;
+}
+
+.login-choices .actions {
+    justify-content: flex-start;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* Hide elements that have the HTML hidden attribute. */
+[hidden] {
+    display: none !important;
+}
+
+/* Nurse login options */
+.login-choices {
+    margin-top: 25px;
+}
+
+.login-choices .actions {
+    justify-content: flex-start;
+}
+
+/* Patient waiting list */
+.waitlist {
+    padding-left: 35px;
+}
+
+.waitlist li {
+    padding: 12px 8px;
+    border-bottom: 1px solid #dbe4eb;
+}
+
+
+/* Make the statistic cards clickable */
+
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    text-decoration: none;
+    color: #23354a;
+
+    cursor: pointer;
+}
+
+.stat-card:hover {
+    background: #e8f2f9;
+    border-color: #14649a;
+}
+
+.stat-card:focus-visible {
+    outline: 3px solid #14649a;
+    outline-offset: 3px;
+}
+
+.stat-card small {
+    color: #627285;
+    font-size: 13px;
+}
+
+/* Workload summary */
+
+.workload-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.workload-grid > div {
+    background: #f3f7fb;
+    padding: 20px;
+    border: 1px solid #d7e1e9;
+    border-radius: 6px;
+}
+
+.workload-grid strong {
+    display: block;
+    font-size: 25px;
+    color: #14649a;
+}
+
+.workload-grid span {
+    display: block;
+    margin-top: 5px;
+}
+
+/* Editable appointment duration */
+
+#patientRows input[type="number"] {
+    width: 95px;
+    min-width: 95px;
+}
+
+/* Hide empty sections */
+
+[hidden] {
+    display: none !important;
+}
+
+/* Mobile layout */
+
+@media (max-width: 650px) {
+    .workload-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat-card {
+        padding: 15px;
+    }
+}
