@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nurse Sign-In | CarePoint Hospital</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/layout.js" defer></script>
+</head>
+
+<body data-page="login">
+
+    <div id="site-header"></div>
+
+    <main class="wrap">
+
+        <h1>Nurse Sign-In</h1>
+
+        <section class="panel narrow">
+
+            <h2>Staff Login</h2>
+
+            <p class="note">
+                Demo username: <strong>nurse</strong>
+                &middot;
+                Password: <strong>demo123</strong>
+            </p>
+
+            <form id="loginForm">
+
+                <label>
+                    Username
+                    <input
+                        type="text"
+                        id="username"
+                        autocomplete="username"
+                        required
+                    >
+                </label>
+
+                <label>
+                    Password
+                    <input
+                        type="password"
+                        id="password"
+                        autocomplete="current-password"
+                        required
+                    >
+                </label>
+
+                <p
+                    id="loginError"
+                    class="error"
+                    role="alert"
+                ></p>
+
+                <button type="submit">
+                    Sign In
+                </button>
+
+            </form>
+
+            <section
+                id="loginChoices"
+                class="login-choices"
+                hidden
+            >
+
+                <h2>Nurse Options</h2>
+
+                <p id="savedShiftMessage"></p>
+
+                <div class="actions">
+
+                    <a
+                        class="button"
+                        href="nurse-input.html"
+                    >
+                        Start or Change Shift
+                    </a>
+
+                    <a
+                        class="button secondary"
+                        id="viewMyPatients"
+                        href="nurse-dashboard.html?view=mine"
+                        hidden
+                    >
+                        View My Patients
+                    </a>
+
+                    <a
+                        class="button secondary"
+                        id="viewWaitingPatients"
+                        href="nurse-dashboard.html?view=waiting"
+                        hidden
+                    >
+                        View Waiting Patients
+                    </a>
+
+                    <a
+                        class="button secondary"
+                        id="viewPublicWaitlist"
+                        href="index.html#waitlist-title"
+                    >
+                        View Waiting List
+                    </a>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>
